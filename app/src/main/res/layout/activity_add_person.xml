@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context="com.maro.kontripeople.tools.AddPerson">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Fullname"
+        android:textColorHint="@color/base_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|textCapWords"
+            android:textColorHint="@color/base_color" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/occupation_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Occupation"
+        android:textColorHint="@color/base_color"
+        app:layout_constraintEnd_toEndOf="@id/name_input"
+        app:layout_constraintStart_toStartOf="@id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/age_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/occupation_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/age_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Age"
+        android:textColorHint="@color/base_color"
+        app:layout_constraintEnd_toEndOf="@+id/occupation_input"
+        app:layout_constraintStart_toStartOf="@+id/occupation_input"
+        app:layout_constraintTop_toBottomOf="@id/gender_spinner">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/age_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="@+id/name_input"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+
+    <Spinner
+        android:id="@+id/employment_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="@+id/name_input"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/employment__" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employment_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/employment_spinner"
+        app:layout_constraintTop_toTopOf="@+id/employment_spinner"
+        app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+    <Spinner
+        android:id="@+id/citizen_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="@+id/name_input"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/citizen_"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/citizen_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/citizen_spinner"
+        app:layout_constraintTop_toTopOf="@+id/citizen_spinner"
+        app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Gender:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/name_input" />
+
+    <TextView
+        android:id="@+id/employment__"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Employment Status:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/occupation_input"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_input" />
+
+    <TextView
+        android:id="@+id/citizen_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Are you Nigerian?"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/name_input"
+        app:layout_constraintTop_toBottomOf="@+id/employment_spinner" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_button"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/citizen_spinner" />
+
+    <ProgressBar
+        android:id="@+id/submit_progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name_input" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gender_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/gender_spinner"
+        app:layout_constraintTop_toTopOf="@+id/gender_spinner"
+        app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>

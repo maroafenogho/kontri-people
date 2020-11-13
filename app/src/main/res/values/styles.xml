@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_color</item>
+        <item name="colorPrimaryDark">@color/base_color</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Splashscreen" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimaryDark">@color/background_color</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+    <style name="NavigationView">
+        <item name="android:textColor">@color/base_color</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="listPreferredItemHeightSmall">40dp</item>
+    </style>
+
+    <style name="AppTheme.Spinner"  parent="@style/Widget.AppCompat.Spinner">
+        <item name="android:divider"> @color/base_color</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:itemPadding">4dp</item>
+    </style>
+
+</resources>
