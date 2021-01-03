@@ -26,4 +26,17 @@ public interface ApiInterface {
             @Field("employmentStatus")AddPeopleFragment.Employment employmentStatus,
             @Field("citizen")boolean citizen
     );
+    @FormUrlEncoded
+    @POST("/api/register")
+    Call<ResponseBody> signUp(
+            @Field("name")String name,
+            @Field("email") String email,
+            @Field("password")String password
+    );
+    @FormUrlEncoded
+    @POST("/api/login")
+    Call<ResponseBody> login(
+            @Field("email") String email,
+            @Field("password")String password
+    );
 }

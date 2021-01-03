@@ -15,16 +15,19 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.maro.kontripeople.fragments.AddPeopleFragment;
 import com.maro.kontripeople.fragments.HomeFragment;
 import com.maro.kontripeople.fragments.PeopleFragment;
+import com.maro.kontripeople.tools.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity {
     TextView title;
     DrawerLayout drawerLayout;
+    ImageView button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         drawerLayout   = findViewById(R.id.drawer_layout);
+        button = findViewById(R.id.profileIcon);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
             @Override

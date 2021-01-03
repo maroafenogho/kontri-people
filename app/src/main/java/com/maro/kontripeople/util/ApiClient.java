@@ -37,4 +37,20 @@ public class ApiClient {
                 .build();
         return retrofit;
     }
+
+    public static synchronized Retrofit auth(){
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder client = new OkHttpClient.Builder();
+        client.connectTimeout(30, TimeUnit.SECONDS);
+        client.readTimeout(30, TimeUnit.SECONDS);
+        client.writeTimeout(30, TimeUnit.SECONDS);
+        client.addInterceptor(interceptor);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .client(client.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit;
+    }
 }
